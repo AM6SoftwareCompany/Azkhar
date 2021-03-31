@@ -9,3 +9,4 @@
 
 ## ToDo
 1. Upload pic
+1. Logging

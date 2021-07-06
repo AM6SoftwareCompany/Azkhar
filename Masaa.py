@@ -3,8 +3,8 @@ import logging
 import datetime
 import webbrowser
 
-import pyperclip
 import pyautogui
+import pyperclip
 
 logging.basicConfig(filename='azkhar.log', level=logging.INFO,
 	format='%(asctime)s  - %(levelno)s | %(message)s')
@@ -69,25 +69,45 @@ def story(PageName, Text):
 	pyautogui.click()
 
 if __name__ == '__main__':
-	start_time = datetime.now()
+	start_time = datetime.datetime.now()
 	print(f'{start_time} | Starting')
 	webbrowser.open_new('https://business.facebook.com/creatorstudio/published_stories?content_table=POSTED_POSTS')
 	time.sleep(10)
 	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlMasaa Starts')
+	for nm in range(11):
+		time.sleep(nm)
+		if pyautogui.pixelMatchesColor(253, 703 , (0, 164, 0)):
+			print("GO!")
+			break
+		if nm == 10:
+			logging.debug('GO gone wrong!')
 
 	for i in AzkharAlMasaa:
-		starting_time = datetime.now()
+		starting_time = datetime.datetime.now()
 		logging.info(f'{starting_time} | Start {AzkharAlMasaa.index(i)}')
 		story('apocryphon', i)
-		print(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)}')
-		time.sleep(2)
-		ending_time = datetime.now()
+		for nm in range(11):
+			time.sleep(nm)
+			if pyautogui.pixelMatchesColor(253, 703, (0, 164, 0)):
+				print(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)}')
+				break
+			if nm == 10:
+				logging.debug(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)} on AzkharAlMasaa!?')
+
+		ending_time = datetime.datetime.now()
 		logging.info(f'{ending_time} | Done {AzkharAlMasaa.index(i)}')
 		logging.info('Duration: {}'.format(ending_time - starting_time))
 		logging.info('\n')
 
 	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlMasaa Done on {datetime.datetime.now().time()}✔')
-	end_time = datetime.now()
+	for nm in range(11):
+		time.sleep(nm)
+		if pyautogui.pixelMatchesColor(253, 703, (0, 164, 0)):
+			print("FINISH!")
+			break
+		if nm == 10:
+			logging.debug("FINISH gone wrong!?")
+	end_time = datetime.datetime.now()
 	logging.info(f'{end_time} | Quit')
 	print(f'{end_time} | Quit')
 	logging.info('Duration: {}'.format(end_time - start_time))

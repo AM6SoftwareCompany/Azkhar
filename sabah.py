@@ -1,9 +1,13 @@
 import time
+import logging
 import datetime
 import webbrowser
 
 import pyperclip
 import pyautogui
+
+logging.basicConfig(filename='azkhar.log', level=logging.INFO,
+	format='%(asctime)s  - %(levelno)s | %(message)s')
 
 AzkharAlsabah = [
 "اللَّهُمَّ أنْتَ رَبِّي لا إلَهَ إلَّا أنْتَ، خَلَقْتَنِي وأنا عَبْدُكَ، وأنا علَى عَهْدِكَ ووَعْدِكَ ما اسْتَطَعْتُ، أعُوذُ بكَ مِن شَرِّ ما صَنَعْتُ، أبُوءُ لكَ بنِعْمَتِكَ عَلَيَّ، وأَبُوءُ لكَ بذَنْبِي فاغْفِرْ لِي، فإنَّه لا يَغْفِرُ الذُّنُوبَ إلَّا أنْت",
@@ -70,11 +74,26 @@ def story(PageName, Text):
 	pyautogui.click()
 
 if __name__ == '__main__':
+	start_time = datetime.now()
+	print(f'{start_time} | Starting')
+	logging.info(f'{start_time} | Starting')
 	webbrowser.open_new('https://business.facebook.com/creatorstudio/published_stories?content_table=POSTED_POSTS')
 	time.sleep(10)
 	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlsabah Starts')
-	for i in AzkharAlsabah:
-		story('apocryphon', i)
-		time.sleep(2)
-	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlsabah Done on {datetime.datetime.now().time()}✔')
 	
+	for i in AzkharAlsabah:
+		starting_time = datetime.now()
+		logging.info(f'{starting_time} | Start {AzkharAlsabah.index(i)}')
+		story('apocryphon', i)
+		print(f'{AzkharAlsabah.index(i)}/{len(AzkharAlsabah)}')
+		time.sleep(2)
+		ending_time = datetime.now()
+		logging.info(f'{ending_time} | Done {AzkharAlsabah.index(i)}')
+		logging.info('Duration: {}'.format(ending_time - starting_time))
+		logging.info('\n')
+
+	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlsabah Done on {datetime.datetime.now().time()}✔')
+	end_time = datetime.now()
+	logging.info(f'{end_time} | Quit')
+	print(f'{end_time} | Quit')
+	logging.info('Duration: {}'.format(end_time - start_time))

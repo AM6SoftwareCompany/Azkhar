@@ -44,7 +44,7 @@ AzkharAlsabah = [
 # =======================================================================================================================================================================================================================================================================================================================================================
 
 def story(PageName, Text):
-	pyautogui.moveTo(950, 300, duration=1)
+	pyautogui.moveTo(1260, 200, duration=1)
 	time.sleep(2)
 	pyautogui.click()
 	pyautogui.moveTo(900, 200, duration=1)
@@ -70,10 +70,11 @@ def story(PageName, Text):
 	pyautogui.click()
 
 if __name__ == '__main__':
-	webbrowser.open_new('https://business.facebook.com/creatorstudio/home')
+	webbrowser.open_new('https://business.facebook.com/creatorstudio/published_stories?content_table=POSTED_POSTS')
 	time.sleep(10)
 	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlsabah Starts')
 	for i in AzkharAlsabah:
 		story('apocryphon', i)
 		time.sleep(2)
 	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlsabah Done on {datetime.datetime.now().time()}✔')
+	

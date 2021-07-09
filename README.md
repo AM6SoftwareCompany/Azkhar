@@ -8,7 +8,10 @@
 1. if txt Click on the box and write else upload pic
 1. Click Share
 1. Repeat
+1. Logging
+1. Check if uploaded
 
 ## ToDo
 1. Upload pic
-1. Logging
+1. Delete old stories
+1. Check every step of the way

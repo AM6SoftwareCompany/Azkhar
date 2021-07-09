@@ -45,35 +45,35 @@ AzkharAlMasaa = [
 
 def story(PageName, Text):
 	pyautogui.moveTo(1260, 200, duration=1)
-	time.sleep(2)
+	time.sleep(3)
 	pyautogui.click()
 	pyautogui.moveTo(900, 200, duration=1)
-	time.sleep(2)
+	time.sleep(3)
 	pyautogui.click()
 	pyautogui.write(PageName)
-	time.sleep(2)
+	time.sleep(3)
 	pyautogui.moveTo(970, 270, duration=1)
 	time.sleep(6)
 	pyautogui.click()
 	pyautogui.moveTo(1000, 500, duration=1)
-	time.sleep(2)
+	time.sleep(3)
 	pyautogui.click()
 	pyautogui.moveTo(150, 400, duration=1)
-	time.sleep(2)
+	time.sleep(3)
 	pyautogui.click()
 	# Store our string to the clipboard
 	pyperclip.copy(Text)
 	# Hotkey the paste command
 	pyautogui.hotkey("ctrl", "v")
 	pyautogui.moveTo(250, 700, duration=1)
-	time.sleep(2)
+	time.sleep(3)
 	pyautogui.click()
 
 if __name__ == '__main__':
 	start_time = datetime.datetime.now()
 	print(f'{start_time} | Starting')
 	webbrowser.open_new('https://business.facebook.com/creatorstudio/published_stories?content_table=POSTED_POSTS')
-	time.sleep(10)
+	time.sleep(15)
 	story('apocryphon', f'{datetime.datetime.now().date()} AzkharAlMasaa Starts')
 	for nm in range(11):
 		time.sleep(nm)
@@ -90,7 +90,7 @@ if __name__ == '__main__':
 		for nm in range(11):
 			time.sleep(nm)
 			if pyautogui.pixelMatchesColor(253, 703, (0, 164, 0)):
-				print(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)}')
+				print(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)} : {round((AzkharAlMasaa.index(i)+1)/len(AzkharAlMasaa) * 100, 1)}%')
 				break
 			if nm == 10:
 				logging.debug(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)} on AzkharAlMasaa!?')

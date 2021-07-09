@@ -90,7 +90,7 @@ if __name__ == '__main__':
 		for nm in range(11):
 			time.sleep(nm)
 			if pyautogui.pixelMatchesColor(253, 703, (0, 164, 0)):
-				print(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)} : {round((AzkharAlMasaa.index(i)+1)/len(AzkharAlMasaa) * 100, 1)}%')
+				print(f'{(AzkharAlMasaa.index(i)+1)}/{len(AzkharAlMasaa)} : {round((AzkharAlMasaa.index(i)+1)/len(AzkharAlMasaa) * 100, 1)}%')
 				break
 			if nm == 10:
 				logging.debug(f'{AzkharAlMasaa.index(i)}/{len(AzkharAlMasaa)} on AzkharAlMasaa!?')
